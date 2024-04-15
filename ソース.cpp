@@ -1,4 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
+#define QUIZ_MAX 4
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -6,14 +7,14 @@
 
 int main(void)
 {
-	char _quizArray[4][300] =
+	char _quizArray[QUIZ_MAX][300] =
 	{
 		"2020年に発売され、ヒットしたNintendo Switchのゲーム「○○○○　どうぶつの森」。○○○○に入る言葉は？",
 		"2010年代にスマートフォンでヒットしたソーシャルゲーム「パズドラ」の正式名称は？",
 		"2000年代にガラケーでヒットした、自転車に乗った棒人間を操作して遊ぶゲームの名前は？",
 		"1990年代にゲームセンターに設置され、ブームとなった写真シール機「プリクラ」の正式名称は？"
 	};
-	char _correctAnsArray[4][40] =
+	char _correctAnsArray[QUIZ_MAX][40] =
 	{
 		"あつまれ",
 		"パズル＆ドラゴンズ",
@@ -26,7 +27,7 @@ int main(void)
 	int _quizLen = sizeof(_quizArray) / sizeof(_quizArray[0]);
 	char _ans[30];
 	int _ansNum = 0;
-	for (int i = 0; i < _quizLen; i++)
+	for (int i = 0; i < QUIZ_MAX; i++)
 	{
 		printf("%s\n", *(_quiz + i));
 		scanf("%s", _ans);
